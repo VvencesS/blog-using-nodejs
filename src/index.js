@@ -14,7 +14,6 @@ db.connect();
 
 // Conf thư mục file tĩnh
 app.use(express.static(path.join(__dirname, 'public')));
-console.log(path.join(__dirname, 'public'));
 
 // Apply middleware
 app.use(
