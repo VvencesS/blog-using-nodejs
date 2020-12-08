@@ -7,8 +7,9 @@ class MeController {
     let courseQuery = Course.find({});
 
     if (req.query.hasOwnProperty('_sort')) {
+      const isValidType = ['asc', 'desc'].includes(req.query.type);
       courseQuery = courseQuery.sort({
-        [req.query.column]: req.query.type,
+        [req.query.column]: isValidType ? req.query.type : 'desc',
       });
     }
 
